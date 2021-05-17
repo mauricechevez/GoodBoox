@@ -16,10 +16,10 @@ Visit **[Good Boox](https://github.com/mauricechevez/GoodBoox)** here.
 `4` An ERD with two models (minimum) > User + 1 Resource (one to many) - (Lucidchart)
 
 - One : One
-    - A comment belongs to one article.
+    - A comment belongs to one review.
 - One : Many
     - A review can have many comments.
-    - An author can have many reviews.
+    - A user (author) can have many reviews.
 
 
 ![ERD](./img/screenshots/ERD_diagram1.png)

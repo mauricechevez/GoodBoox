@@ -1,7 +1,7 @@
 {
-  "name": "express-authentication",
+  "name": "goodboox",
   "version": "1.0.0",
-  "description": "This is express authentication",
+  "description": "This is a book review blog",
   "main": "server.js",
   "directories": {
     "test": "test"
@@ -12,12 +12,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/romebell/express-authentication.git"
+    "url": "git+https://github.com/mauricechevez/GoodBoox.git"
   },
-  "author": "Rome Bell",
+  "author": "Maurice Chevez",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/romebell/express-authentication/issues"
+    "url": "https://github.com/mauricechevez/GoodBoox/issues"
   },
   "homepage": "https://github.com/romebell/express-authentication#readme",
   "dependencies": {

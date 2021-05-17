@@ -11,12 +11,15 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.review.hasMany(models.comment)
+      models.review.belongsTo(models.user)
     }
   };
   review.init({
     title: DataTypes.TEXT,
     content: DataTypes.TEXT,
     userId: DataTypes.INTEGER,
+    book_rating: DataTypes.INTEGER,
     book_price: DataTypes.INTEGER,
     img_url: DataTypes.TEXT,
     category: DataTypes.TEXT

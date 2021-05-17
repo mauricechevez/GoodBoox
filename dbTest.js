@@ -28,11 +28,12 @@ const makeReview = () =>{
     .then(foundUser =>{
         foundUser.createReview({
             //object filled with attributes of Review model
-      title:"Without Remorse",
-      content:`"This book is good for three reasons. One, it's not a Jack Ryan story. It tells us how John Clark came into being, who he is and what he is, and the plot actually happens roughly 15-20 years before the main series. Two, Vietnam, so it's low tech and gritty Ramboism. Three, Tom Clancy normally wrote Puritan Republican-voting cardboard emotions for his characters with the full knowledge that they would be portrayed in the cinema, so it must look good. But here, he went the distance with John and actually gave him something of a semblance of a real personality, and it's one of his more engaging works. All combined, it's a very decent, classic thriller, and you will like for a bunch of reasons, especially since John is sort of an anti-hero, and there are several unique, old era elements in the book, which make for a very refreshing departure from Tom's highly dense and detailed military flavored writing."`,
+      title:"The Shining",
+      content:`The Shining is a ghost story told the way it should be. The characters are strong and endaring, all in their own right. I actually really like Jack Torrance. He has personality, plenty of flaws, and he’s just like every John Doe next door. Stephen King does an excellent job describing Jack’s descent into madness. Danny is another great character. He’s timid and shy and a small kid, but at the same time he’s the most powerful of all characters, with a gift that might be their only chance to escape.Suspenseful from the get-go, thrilling and terrifying, this is a great novel. I want to see the movie now, but hope that won’t be a dissapointment. This is my first full-length novel read by Stephen King, and I can’t wait to dive into another one of his works soon.`,
       book_price:10,
-      img_url:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1310082706l/19668.jpg",
-      category:"Action"
+      book_rating:5,
+      img_url:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1353277730l/11588.jpg",
+      category:"Thriller"
         })
     })
     .then(newReview =>{

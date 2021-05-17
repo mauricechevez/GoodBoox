@@ -17,6 +17,9 @@ module.exports = {
       userId: {
         type: Sequelize.INTEGER
       },
+      book_rating: {
+        type: Sequelize.INTEGER
+      },
       book_price: {
         type: Sequelize.INTEGER
       },

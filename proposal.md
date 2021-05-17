@@ -39,7 +39,7 @@ development/user-stories-that-dont-suck/) )
 | GET | / | Index (Read) | The homepage with list of reviews and links. | 
 | GET | /book/new | New (Read) | Show a form to create a book review. |
 | POST | / | Create (Create) | Creates new book review using POST payload data. Redirects to homepage. | 
-| GET | /signup/new | New (Read) | Shows user a form to create a new account. |
+| GET | /signup/ | New (Read) | Shows user a form to create a new account. |
 | POST | /signup/ | Create (Create) | Creates a new user account using POST payload data. Redirects to homepage. |
 | GET | /login | Login (Read) | Shows user a login form with username and password fields |
 | POST | /login | Login (Read) | Authenticates the user and redirects to homepage. |

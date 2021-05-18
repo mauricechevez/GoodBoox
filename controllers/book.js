@@ -15,7 +15,16 @@ router.get('/new', (req,res)=>{
 
 router.get('/review/:id', (req, res) =>{
     const bookId = req.params.id
-    res.render('/reviews/index',)
+    // const authorName
+    db.review.findOne({
+      where:{id:bookId},
+      include:[db.user]
+    }).then(bookFound =>{
+      console.log(bookFound.user.name)
+      res.render('reviews/index.ejs', {bookFound})
+    })
+   
+    // res.render('/reviews/index.ejs',)
   })
 
 module.exports = router;

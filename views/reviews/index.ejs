@@ -1,0 +1,21 @@
+
+<div class="container">
+    <h2><%= bookFound.title %> </h2>
+    <!--Author here-->
+    <p>by <span style="font-weight: 700;"><%= bookFound.author %> </span></p>
+    <!-- Rating here -->
+    <p>Rating: <span style="font-weight: 700;"><%= bookFound.book_rating %> / 5 </span></p>
+    <!--Price here-->
+    <p>Price: <span style="font-weight: 700;">$<%= bookFound.book_price %></span> USD </p>
+    <!-- Image here-->
+    <img src="<%= bookFound.img_url %>" alt="<%=bookFound.title%>">
+    <!-- content here-->
+    <div class="bookreview-content">
+        <%= bookFound.content %> 
+    </div>
+    <p>Reviewed by: <span style="font-weight: 700;"><%= bookFound.user.name %> </span></p>
+
+</div>
+<div class='container comment-section'>
+    <p class="h5">Comments here</p> 
+</div>

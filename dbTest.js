@@ -47,7 +47,7 @@ const makeReview = () =>{
 const findReview = () => {
     db.review.findAll()
     .then(foundReview =>{
-        console.log(foundReview)
+        console.log(foundReview[0].title)
     })
 }
 // findReview()
@@ -69,7 +69,7 @@ const addUserToExistingReview = () =>{
     })
     .catch(err => console.log(`ERROR Found : ${err}`))
 }
-addUserToExistingReview()
+// addUserToExistingReview()
 
 
 

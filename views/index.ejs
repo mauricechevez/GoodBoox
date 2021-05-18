@@ -1,7 +1,27 @@
-<!-- <h2>Homepage</h2> -->
-<!-- <nav>
-    <ul>
-        <li><a href="/auth/signup">Sign Up</a></li>
-        <li><a href="/auth/login">Log In</a></li>
-    </ul>
-</nav> -->
+
+<!-- List of reviews below -->
+<div class="container review">
+    <h3>Check out our latest book reviews</h3>
+    <% reviews.forEach((review, index) => { %>
+        <li><%= review.title %> by <%= review.author %>  </li>
+        
+    <% }); %> 
+</div>
+
+<div class="container nyt-content">
+    <h4>More book reviews from our partners</h4>
+    <div class="nyt-box__container">
+        <div class="nyt-content__box">
+            <p>Story 1 API content</p>
+        </div>
+        <div class="nyt-content__box">
+            <p>Story 1 API content</p>
+        </div>
+        <div class="nyt-content__box">
+            <p>Story 1 API content</p>
+        </div>
+        <div class="nyt-content__box">
+            <p>Story 1 API content</p>
+        </div>
+    </div>
+</div>

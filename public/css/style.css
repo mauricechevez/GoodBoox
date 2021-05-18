@@ -7,3 +7,17 @@ nav ul li {
 h1 {
   color: rgb(0, 0, 0);
 }
+
+.review{
+  border: black 2px solid;
+}
+
+.nyt-content{
+  border: black 2px solid;
+  background: rgb(197, 197, 197);
+}
+.nyt-box__container{
+  display: flex;
+  justify-content: space-between;
+}
+

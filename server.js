@@ -7,6 +7,7 @@ const session = require('express-session')
 const SECRET_SESSION = process.env.SECRET_SESSION;
 const passport = require('./config/ppConfig')
 const isLoggedIn = require('./middleware/isLoggedIn')
+const db = require('./models')
 
 app.set('view engine', 'ejs');
 
@@ -32,7 +33,11 @@ app.use((req, res, next) =>{
 /* ------ ROUTES ------ */
 
 app.get('/', (req, res) => {
-  res.render('index');
+    db.review.findAll()
+    .then(reviews =>{
+      res.render('index', {reviews});
+    })
+
 });
 
 app.get('/profile', isLoggedIn, (req, res) => {

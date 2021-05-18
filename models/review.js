@@ -17,6 +17,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   review.init({
     title: DataTypes.TEXT,
+    author: DataTypes.TEXT,
     content: DataTypes.TEXT,
     userId: DataTypes.INTEGER,
     book_rating: {

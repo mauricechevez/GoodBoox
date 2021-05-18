@@ -3,7 +3,8 @@
 <div class="container review">
     <h3>Check out our latest book reviews</h3>
     <% reviews.forEach((review, index) => { %>
-        <li><%= review.title %> by <%= review.author %>  </li>
+        <% console.log(review.book_price,review.title,review.author) %>
+        <li><%= review.title %> by <%= review.author %>. Price: $<%= review.book_price %>   </li>
         
     <% }); %> 
 </div>
@@ -12,16 +13,16 @@
     <h4>More book reviews from our partners</h4>
     <div class="nyt-box__container">
         <div class="nyt-content__box">
-            <p>Story 1 API content</p>
+            <p>Story  API content</p>
         </div>
         <div class="nyt-content__box">
-            <p>Story 1 API content</p>
+            <p>Story  API content</p>
         </div>
         <div class="nyt-content__box">
-            <p>Story 1 API content</p>
+            <p>Story  API content</p>
         </div>
         <div class="nyt-content__box">
-            <p>Story 1 API content</p>
+            <p>Story  API content</p>
         </div>
     </div>
 </div>

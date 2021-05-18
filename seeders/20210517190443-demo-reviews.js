@@ -10,6 +10,7 @@ const reviewData = [
     book_price:4,
     img_url:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1572098085l/18135._SY475_.jpg",
     category:'Drama',
+    author:'William Shakespeare',
     createdAt: new Date(),
     updatedAt: new Date()
   },
@@ -21,6 +22,7 @@ const reviewData = [
     book_price:4,
     img_url:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1572098085l/18135._SY475_.jpg",
     category:'Horror',
+    author:"Bram Stoker",
     createdAt: new Date(),
     updatedAt: new Date()
   
@@ -33,8 +35,33 @@ const reviewData = [
     book_price:10,
     img_url:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1310082706l/19668.jpg",
     category:"Action",
+    author:"Tom Clancy",
     createdAt: new Date(),
     updatedAt: new Date()
+  },
+  {
+    title:"I Am Not Spock",
+    content:`I am a fan of Star Trek, in particular the original series movies. I've also had occasion to listen to Mr. Nimoy speak twice, so I was looking forward to reading this infamously titled autobiography. I wasn't disappointed, and the 'voice' in the book matched up with my expectations for the most part. Not a heavy ready, it's a pretty slim book, but I enjoyed it quite a bit. I don't know that I'd recommend it to the rabid Trekkie, since it really isn't focused on the series. I'm about to start on 'I Am Spock' next, and I'm looking forward to seeing how Mr. Nimoy's writing developed from one book to the next.`,
+    book_rating:4,
+    book_price:10,
+    img_url:'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1331448368l/580882.jpg',
+    category:'Biography',
+    author:"Leonard Nimoy",
+    createdAt: new Date(),
+    updatedAt: new Date()
+  },
+  {
+      title: 'The Shining',
+      content: 'The Shining is a ghost story told the way it should be. The characters are strong and endaring, all in their own right. I actually really like Jack Torrance. He has personality, plenty of flaws, and he’s just like every John Doe next door. Stephen King does an excellent job describing Jack’s descent into madness. Danny is another great character. He’s timid and shy and a small kid, but at the same time he’s the most powerful of all characters, with a gift that might be their only chance to escape.Suspenseful from the get-go, thrilling and terrifying, this is a great novel. I want to see the movie now, but hope that won’t be a dissapointment. This is my first full-length novel read by Stephen King, and I can’t wait to dive into another one of his works soon.',
+      userId: 1,
+      book_rating: 5,
+      book_price: 5,
+      img_url: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1353277730l/11588.jpg',
+      author: 'Stephen King',
+      category: 'Thriller',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    
   }
 ]
 

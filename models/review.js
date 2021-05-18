@@ -19,7 +19,13 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.TEXT,
     content: DataTypes.TEXT,
     userId: DataTypes.INTEGER,
-    book_rating: DataTypes.INTEGER,
+    book_rating: {
+      type: DataTypes.INTEGER,
+      validate:{
+        min:0,
+        max:5
+      }
+    },
     book_price: DataTypes.INTEGER,
     img_url: DataTypes.TEXT,
     category: DataTypes.TEXT

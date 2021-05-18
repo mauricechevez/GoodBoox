@@ -29,7 +29,7 @@ app.use((req, res, next) =>{
   next()
 })
 
-
+/* ------ ROUTES ------ */
 
 app.get('/', (req, res) => {
   res.render('index');
@@ -40,7 +40,9 @@ app.get('/profile', isLoggedIn, (req, res) => {
   res.render('profile', {id, name, email});
 });
 
+
 app.use('/auth', require('./controllers/auth'));
+app.use('/book', require('./controllers/book'))
 
 
 const PORT = process.env.PORT || 3000;

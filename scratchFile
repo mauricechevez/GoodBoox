@@ -1,0 +1,1 @@
+sequelize model:create --name review --attributes title:text,content:text,userId:integer,book_rating:integer,book_price:integer,img_url:text,category:text --force

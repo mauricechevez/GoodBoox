@@ -1,0 +1,40 @@
+<br \>
+
+<div class="container center-block">
+<p class="h4">Create a new book review</p>
+<form action="/reviews/signup" method="get">
+<label for="book-title">Book Title *</label>
+<input type="text" id="book-title" name="book-title" required>
+<label for="author">Author *</label>
+<input type="text" id="author" name="author" required>
+<br \>
+
+<label for="content">Write your review below *</label>
+<br \>
+<textarea name="content" id="content" cols="90" rows="10" required></textarea>
+<br>
+<label for="book-price">Retail Price *</label>
+<input type="number" id="book-price" name="book-price" required>
+<label for="img-url">Image Address (full URL)</label>
+<input type="url" id="img-url" name="img-url">
+<br><br>
+<div class="rating">
+    <p>Rating (1 = Horrible, 5 = Excellent)</p>
+    <input type="radio" id="1" name="book-rating" value=1>
+    <label for="1">1</label>
+    <input type="radio" id="2" name="book-rating" value=2>
+    <label for="2">2</label>
+    <input type="radio" id="3" name="book-rating" value=3>
+    <label for="3">3</label>
+    <input type="radio" id="4" name="book-rating" value=4>
+    <label for="4">4</label>
+    <input type="radio" id="5" name="book-rating" value=5>
+    <label for="5">5</label>
+</div>
+<br \>
+<input type="submit" value="Submit" class="btn btn-primary">
+<br><br>
+<p>* required</p>
+</form>
+
+</div>

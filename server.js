@@ -37,7 +37,6 @@ app.get('/', (req, res) => {
     .then(reviews =>{
       res.render('index', {reviews});
     })
-
 });
 
 app.get('/profile', isLoggedIn, (req, res) => {

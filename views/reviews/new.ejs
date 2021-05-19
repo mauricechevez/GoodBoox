@@ -2,14 +2,21 @@
 
 <div class="container center-block">
 <p class="h4">Create a new book review</p>
-<form action="/reviews/signup" method="get">
+<form action="/book/new" method="get">
 <label for="book-title">Book Title *</label>
 <input type="text" id="book-title" name="book-title" required>
-<label for="author">Author *</label>
+<label for="author">Author of Book *</label>
 <input type="text" id="author" name="author" required>
 <br \>
-
-<label for="content">Write your review below *</label>
+<br \>
+<label for="category">Category *</label>
+<input type="text" id="category" name="category" required>
+<br \>
+<br \>
+<label for='name'>Your Name *</label>
+<input type="text" id="name" name="name">
+<br \><br \>
+<label for="content">Enter your review *</label>
 <br \>
 <textarea name="content" id="content" cols="90" rows="10" required></textarea>
 <br>

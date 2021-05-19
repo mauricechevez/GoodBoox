@@ -41,6 +41,7 @@ app.get('/', (req, res) => {
 
 app.get('/profile', isLoggedIn, (req, res) => {
   const {id, name, email} = req.user.get()
+  console.log(req.user)
   res.render('profile', {id, name, email});
 });
 
@@ -48,7 +49,7 @@ app.get('/profile', isLoggedIn, (req, res) => {
 app.use('/auth', require('./controllers/auth'));
 app.use('/book', require('./controllers/book'))
 
-
+/* ### PORT LISTENER ### */
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {
   console.log(`🎧 You're listening to the smooth sounds of port ${PORT} 🎧`);

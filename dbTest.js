@@ -47,7 +47,7 @@ const makeReview = () =>{
 const findReview = () => {
     db.review.findAll()
     .then(foundReview =>{
-        console.log(foundReview[0].author)
+        console.log(foundReview)
     })
 }
 findReview()

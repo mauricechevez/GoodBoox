@@ -16,10 +16,11 @@
           <% if (!currentUser) { %> 
             <li><a href="/auth/signup">Signup</a></li>
             <li><a href="/auth/login">Login</a></li>
-            <li><a href="/book/new">Create a Book Review</a></li>
+            
           <%} else { %> 
             <li><a href="/auth/logout">Log Out</a></li>
             <li><a href="/profile">Profile</a></li>
+            <li><a href="/book/new">Create a Book Review</a></li>
           <% } %> 
         </ul>
       </nav>

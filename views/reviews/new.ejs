@@ -2,9 +2,10 @@
 
 <div class="container center-block">
 <p class="h4">Create a new book review</p>
-<form action="/book/new" method="get">
+<!-- FORM FOR NEW BOOK -->
+<form action="/book/new" method="POST">
 <label for="book-title">Book Title *</label>
-<input type="text" id="book-title" name="book-title" required>
+<input type="text" id="book-title" name="title" required>
 <label for="author">Author of Book *</label>
 <input type="text" id="author" name="author" required>
 <br \>
@@ -12,30 +13,27 @@
 <label for="category">Category *</label>
 <input type="text" id="category" name="category" required>
 <br \>
-<br \>
-<label for='name'>Your Name *</label>
-<input type="text" id="name" name="name">
-<br \><br \>
+
 <label for="content">Enter your review *</label>
 <br \>
 <textarea name="content" id="content" cols="90" rows="10" required></textarea>
-<br>
+<br \>
 <label for="book-price">Retail Price *</label>
-<input type="number" id="book-price" name="book-price" required>
+<input type="number" id="book-price" name="book_price" required>
 <label for="img-url">Image Address (full URL)</label>
-<input type="url" id="img-url" name="img-url">
+<input type="url" id="img-url" name="img_url">
 <br><br>
 <div class="rating">
     <p>Rating (1 = Horrible, 5 = Excellent)</p>
-    <input type="radio" id="1" name="book-rating" value=1>
+    <input type="radio" id="1" name="book_rating" value=1>
     <label for="1">1</label>
-    <input type="radio" id="2" name="book-rating" value=2>
+    <input type="radio" id="2" name="book_rating" value=2>
     <label for="2">2</label>
-    <input type="radio" id="3" name="book-rating" value=3>
+    <input type="radio" id="3" name="book_rating" value=3>
     <label for="3">3</label>
-    <input type="radio" id="4" name="book-rating" value=4>
+    <input type="radio" id="4" name="book_rating" value=4>
     <label for="4">4</label>
-    <input type="radio" id="5" name="book-rating" value=5>
+    <input type="radio" id="5" name="book_rating" value=5>
     <label for="5">5</label>
 </div>
 <br \>
@@ -43,5 +41,6 @@
 <br><br>
 <p>* required</p>
 </form>
+<!-- END OF FORM FOR NEW BOOK -->
 
 </div>

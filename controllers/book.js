@@ -1,8 +1,13 @@
 const { urlencoded } = require('express');
 const express = require('express');
+const app = express()
 const router = express.Router();
 const passport = require('../config/ppConfig');
 const db = require('../models')
+
+
+// Middleware
+app.use(express.urlencoded({extended: false}))
 
 
 /* ---- Routes ---- */
@@ -15,20 +20,17 @@ router.get('/new', (req,res)=>{
   
 // NEW REVIEW (Create/POST)
 router.post('/new', (req,res) =>{
-  const userModel = db.user
-  console.log(userModel)
-  .then(returnedModel =>{
     db.review.create({
-      title:req.body.book-title,
+      title:req.body.title,
       content:req.body.content,
-      book_rating:req.body.book-rating,
-      book_price:req.body.book-price,
-      img_url:req.body.img-url,
+      book_rating:req.body.book_rating,
+      book_price:req.body.book_price,
+      img_url:req.body.img_url,
       category:req.body.category,
-      name:req.body.name
-    })
-  })
-    .then(newReview =>{
+      author:req.body.author
+
+    }).then(something =>{
+      console.log(req.body)
       res.redirect('/')
     })
 })
@@ -43,10 +45,6 @@ router.get('/review/:id', (req, res) =>{
       console.log(bookFound.user.name)
       res.render('reviews/index.ejs', {bookFound})
     })
-   
-    // res.render('/reviews/index.ejs',)
   })
-
-
 
 module.exports = router;

@@ -53,9 +53,7 @@ async function addUserToReview(){
     const targetDb = await db.review.create({
         title:''
     })
-}
-    
-    
+}   
 
 // addUserToReview()
 
@@ -67,4 +65,24 @@ const findReview = () => {
         console.log(foundReview)
     })
 }
-findReview()
+// findReview()
+
+async function findReviewAddReviewer(){
+// first, find the review
+
+    try{
+    const reviewFound = await db.review.findOne({where:{id:2}})
+    const userFound = await db.user.findOne({where:{id:2}})
+    console.log(`!!!!!!!!! Trying to add user to Review`)
+    console.log(reviewFound.id, reviewFound.title, reviewFound.userId)
+    console.log(userFound.name,userFound.id)
+     const changedNullValue = await reviewFound.update({
+        userId: userFound.id
+    }, {where:{userId:null}}) 
+    }
+    catch(err){
+        console.log(`$$$$$$ ERROR $$$$$$ `)
+    }
+    
+}
+findReviewAddReviewer()

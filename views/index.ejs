@@ -4,7 +4,7 @@
     <h3>Check out our latest book reviews</h3>
     <% reviews.forEach((review, index) => { %>
        
-        <li><%= review.title %> by <%= review.author %>. </li>
+        <li><a href="/book/review/<%=review.id%>"><%= review.title %> </a> by <%= review.author %>. </li>
         
     <% }); %> 
 </div>

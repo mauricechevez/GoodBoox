@@ -1,13 +1,13 @@
-const { urlencoded } = require('express');
 const express = require('express');
-const app = express()
 const router = express.Router();
 const passport = require('../config/ppConfig');
 const db = require('../models')
 const isLoggedIn = require('../middleware/isLoggedIn')
+const methodOverride = require('method-override')
 
 // Middleware
-app.use(express.urlencoded({extended: false}))
+// app.use(express.urlencoded({extended: false}))
+
 
 
 /* ---- Routes ---- */
@@ -58,8 +58,27 @@ router.get('/review/:id', (req, res) =>{
     })
   })
 
-// EDIT an individual review
-router.get('/edit/:id', (req,res) =>{
+  // EDIT Page index to see all books and edit links.
+router.get('/edit', isLoggedIn, (req,res) =>{
+  // res.send('Edit index page')
+  db.review.findAll()
+  .then(reviews =>{
+    res.render('reviews/editpage', {reviews})
+  })
+})
+ // DELETE a review
+router.delete('/edit/:id', isLoggedIn, (req,res) =>{
+  const iDx = req.params.id
+  db.review.destroy({where: {id:iDx}})
+  .then(deletedReview =>{
+    console.log('SUCCESS!!!!!!!!!!!!!!!!!!!!!!!!!')
+    res.redirect('/')})
+  
+})
+   
+
+// EDIT (GET) an individual review
+router.get('/edit/:id', isLoggedIn, (req,res) =>{
   const bookId = req.params.id
   // Look for this book based on the ID above
   db.review.findOne({
@@ -67,11 +86,36 @@ router.get('/edit/:id', (req,res) =>{
     include:[db.user]
   }).then (bookFound =>{
     console.log(bookFound)
-    res.render('reviews/edit.ejs', {bookFound})
+    res.render('reviews/editform.ejs', {bookFound, bookIdx:req.params.id})
   })
-
-
-  // res.send('You\'ve reached an edit page!')
 })
+
+ // EDIT (POST/PUT) an individual review
+ router.put('/edit/:id', isLoggedIn, (req,res) =>{
+   // find the review
+  //  const {id} = req.user.get()
+   const bookId = req.params.id
+   console.log(bookId)
+    db.review.findOne({
+      where:{id:bookId}
+   }).then(reviewFound =>{
+    console.log('parameter ID variable is !!!!!!!!!!!!! ', req.params.id)
+    reviewFound.update({
+      title:req.body.title,
+      content:req.body.content,
+      book_rating:req.body.book_rating,
+      book_price:req.body.book_price,
+      img_url:req.body.img_url,
+      category:req.body.category,
+      author:req.body.author
+      // userId: req.user.id
+     })
+   }).then(edited =>{
+     console.log(edited)
+     res.redirect('/')
+   }).catch(err =>{
+     console.log('Found an error!!!!! ', err)
+   })
+ })
 
 module.exports = router;

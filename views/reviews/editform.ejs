@@ -3,7 +3,8 @@
 <div class="container center-block">
 <p class="h4">Edit the <%= bookFound.title %>  book review</p>
 <!-- FORM FOR NEW BOOK -->
-<form action="/book/new" method="POST">
+Current book ID is <%= bookFound.id %> 
+<form action="/book/edit/<%= bookFound.id %>/?_method=PUT" method="POST">
 <label for="book-title">Book Title *</label>
 <input type="text" id="book-title" name="title" value="<%= bookFound.title %>" required>
 <label for="author">Author of Book *</label>

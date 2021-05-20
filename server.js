@@ -49,6 +49,14 @@ app.get('/profile', isLoggedIn, (req, res) => {
 app.use('/auth', require('./controllers/auth'));
 app.use('/book', require('./controllers/book'))
 
+/* OOPS! 404 Page */
+app.get('/*', (req,res) =>{
+  res.send(`<p>You have reached a page that does not exist</p>
+  <a href="/" alt="Go to main page">Back to Good Boox main page</a>
+  <h1 style="font-size:7rem;">404</h1>
+  `)
+})
+
 /* ### PORT LISTENER ### */
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {

@@ -15,14 +15,15 @@ app.use(express.urlencoded({extended: false}))
 
 // NEW REVIEW (VIEW FORM)
 router.get('/new', isLoggedIn,(req,res)=>{
-  const {id, name, email} = req.user.get()
-  console.log(id)
+  const {id, name} = req.user.get()
+  console.log(`User name is ${name} and their ID is ${id}`)
     res.render('reviews/new.ejs')
   })
   
 // NEW REVIEW (Create/POST)
 router.post('/new', isLoggedIn, (req,res) =>{
-  const {id, name, email} = req.user.get()
+  const {id, name} = req.user.get()
+
   db.user.findOne({
     where: {name: name},
     include:[db.review]
@@ -33,15 +34,15 @@ router.post('/new', isLoggedIn, (req,res) =>{
     book_price:req.body.book_price,
     img_url:req.body.img_url,
     category:req.body.category,
-    author:req.body.author
+    author:req.body.author,
+    userId: req.user.id
     })
     }).then(post =>{
-      db.review.
       res.redirect('/')
     })
 })
 
-// Each Review has its own page
+// VIEW an individual review
 router.get('/review/:id', (req, res) =>{
     const bookId = req.params.id
     // const authorName
@@ -49,7 +50,6 @@ router.get('/review/:id', (req, res) =>{
       where:{id:bookId},
       include:[db.user]
     }).then(bookFound =>{
-      console.log('Inside our REVIEW route !!!!!!')
       console.log(bookFound)
       res.render('reviews/index.ejs', {bookFound})
     })
@@ -57,5 +57,10 @@ router.get('/review/:id', (req, res) =>{
       console.log('ERROR' , err)
     })
   })
+
+// EDIT an individual review
+router.get('/edit/:id', (req,res) =>{
+  res.send('You\'ve reached an edit page!')
+})
 
 module.exports = router;

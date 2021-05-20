@@ -5,7 +5,7 @@ const db = require('./models')
 async function deleteReview(){
 // look for review based on ID for testing
    const reviewToEdit = await db.review.destroy({
-       where:{id:12}
+       where:{id:8}
    })
    console.log(reviewToEdit)
 }

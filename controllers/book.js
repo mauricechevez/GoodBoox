@@ -60,7 +60,18 @@ router.get('/review/:id', (req, res) =>{
 
 // EDIT an individual review
 router.get('/edit/:id', (req,res) =>{
-  res.send('You\'ve reached an edit page!')
+  const bookId = req.params.id
+  // Look for this book based on the ID above
+  db.review.findOne({
+    where: {id:bookId},
+    include:[db.user]
+  }).then (bookFound =>{
+    console.log(bookFound)
+    res.render('reviews/edit.ejs', {bookFound})
+  })
+
+
+  // res.send('You\'ve reached an edit page!')
 })
 
 module.exports = router;

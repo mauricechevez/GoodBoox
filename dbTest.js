@@ -71,9 +71,9 @@ async function findReviewAddReviewer(){
 // first, find the review
 
     try{
-    const reviewFound = await db.review.findOne({where:{id:2}})
-    const userFound = await db.user.findOne({where:{id:2}})
-    console.log(`!!!!!!!!! Trying to add user to Review`)
+    const reviewFound = await db.review.findOne({where:{id:1}})
+    const userFound = await db.user.findOne({where:{id:1}})
+    console.log(`****** Updating userId of this review *******`)
     console.log(reviewFound.id, reviewFound.title, reviewFound.userId)
     console.log(userFound.name,userFound.id)
      const changedNullValue = await reviewFound.update({
@@ -83,6 +83,17 @@ async function findReviewAddReviewer(){
     catch(err){
         console.log(`$$$$$$ ERROR $$$$$$ `)
     }
-    
 }
-findReviewAddReviewer()
+// findReviewAddReviewer()
+
+async function changeBookCover(){
+    //first, find the review
+    const reviewFound = await db.review.findOne({where:{title:"Dracula"}})
+    const imageUrl = 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1540464610l/6250997.jpg'
+    console.log(`********************************************`)
+    const changeImgUrl = await reviewFound.update({
+        img_url:imageUrl}
+    )
+    console.log(changeImgUrl)
+}
+// changeBookCover()

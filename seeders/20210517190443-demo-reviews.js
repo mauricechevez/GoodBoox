@@ -22,7 +22,7 @@ const reviewData = [
     userId: 1,
     book_rating:2,
     book_price:4,
-    img_url:"https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1572098085l/18135._SY475_.jpg",
+    img_url:"https://images-na.ssl-images-amazon.com/images/I/51o9pfnGkTL._SY291_BO1,204,203,200_QL40_FMwebp_.jpg",
     category:'Horror',
     author:"Bram Stoker",
     createdAt: new Date(),

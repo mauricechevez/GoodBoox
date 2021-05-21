@@ -84,7 +84,7 @@ async function findReviewAddReviewer(){
         console.log(`$$$$$$ ERROR $$$$$$ `)
     }
 }
-findReviewAddReviewer()
+// findReviewAddReviewer()
 
 async function changeBookCover(){
     //first, find the review
@@ -97,3 +97,4 @@ async function changeBookCover(){
     console.log(changeImgUrl)
 }
 // changeBookCover()
+

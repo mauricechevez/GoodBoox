@@ -9,4 +9,14 @@ async function deleteReview(){
    })
    console.log(reviewToEdit)
 }
-deleteReview()
+// deleteReview()
+
+async function commentDelete(){
+    const theComment = await db.comment.destroy({
+        where:{id:3}
+    })
+    console.log(theComment)
+}
+
+
+commentDelete()

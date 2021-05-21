@@ -16,17 +16,25 @@
     <p>Reviewed by: <span style="font-weight: 700;"><%= bookFound.user.name %> </span></p>
 
 </div>
-<div class='container comment-form' style="margin-bottom: 100px;">
-    <p class="h5">Comments here</p> 
+<div class='container comment-form' style="margin-bottom: 25px;">
+    <p class="h5">Comments Below</p> 
 
-    <form action="/book/review/:id/" method="POST">
+    <form action="/book/review/<%= bookFound.id %> /" method="POST">
     <label for="name">Your Name</label>
-    <input type="text" id="name" name="name">
-    <label for="content">content</label>
-    <input type="text" id="content" name="content">
+    <input type="text" id="name" name="name" required placeholder="Enter your name">
+    <br \>
+    <br \>
+    <label for="content"></label>
+    <textarea name="content" id="content" cols="70" rows="5" placeholder="Add a public comment" required></textarea>
+    <br \>
+    <br \>
     <input type="submit" value="submit">
     </form>
 </div>
-<!-- <div class="container comment-section">
-    <%# bookFound.comment.content %> 
-</div> -->
+<div class="container comment-section">
+    
+  <% bookFound.comments.forEach(cmt => { %>
+    <li><p class="comment-name"><%= cmt.name %> </p></li>
+     <li><p><%= cmt.content %> </p></li>
+  <% }) %>
+</div>

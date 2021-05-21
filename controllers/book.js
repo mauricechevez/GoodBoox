@@ -3,7 +3,8 @@ const router = express.Router();
 // const passport = require('../config/ppConfig');
 const db = require('../models')
 const isLoggedIn = require('../middleware/isLoggedIn')
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
+const { compareSync } = require('bcrypt');
 
 // Middleware
 // app.use(express.urlencoded({extended: false}))
@@ -40,11 +41,8 @@ router.post('/new', isLoggedIn, (req,res) =>{
     })
 })
 
-
-
-
 // VIEW an individual review
-router.get('/review/:id', (req, res) =>{
+/* router.get('/review/:id', (req, res) =>{
     const bookId = req.params.id
     // const authorName
     db.review.findOne({
@@ -57,18 +55,39 @@ router.get('/review/:id', (req, res) =>{
     .catch(err =>{
       console.log('ERROR' , err)
     })
-  })
+  }) */
 
-// Comments
+  // VIEW (GET) a book review
+
+
+// POST Comments
 
 router.post('/review/:id', (req,res)=>{
-  db.comment.create({
-    name: req.body.name,
-    content:req.body.content
-  }).then(newPost =>{
-    console.log(newPost)
-    res.redirect("/")
+  const currentReviewId = parseInt(req.params.id)
+  db.review.findOne({where:{id:currentReviewId}})
+  .then(reviewFound =>{
+    db.comment.create({
+      name:req.body.name,
+      content:req.body.content,
+      reviewId:currentReviewId
+    })
   })
+  .then(postedComment =>{
+    console.log(postedComment)
+    console.log(currentReviewId)
+    res.redirect(`/book/review/${currentReviewId}`)
+  })
+})
+
+router.get('/review/:id', async (req,res)=>{
+  const bookId = req.params.id
+  console.log('Book id is ' , bookId)
+  const bookFound = await db.review.findOne({
+    where:{id:bookId},
+    include:[db.comment,db.user]
+  })
+  // const commentFound = await db.comment.findAll()
+  res.render('reviews/index',{bookFound})
 })
 
 
@@ -80,6 +99,7 @@ router.get('/edit', isLoggedIn, (req,res) =>{
     res.render('reviews/editpage', {reviews})
   })
 })
+
  // DELETE a review
 router.delete('/edit/:id', isLoggedIn, (req,res) =>{
   const iDx = req.params.id
@@ -88,7 +108,6 @@ router.delete('/edit/:id', isLoggedIn, (req,res) =>{
     console.log('!!! REVIEW DELETED !!!')
     req.flash('success','Review Deleted succesfully.')
     res.redirect('/')})
-  
 })
    
 

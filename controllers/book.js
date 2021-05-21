@@ -8,10 +8,7 @@ const methodOverride = require('method-override')
 // Middleware
 // app.use(express.urlencoded({extended: false}))
 
-
-
 /* ---- Routes ---- */
-
 
 // NEW REVIEW (VIEW FORM)
 router.get('/new', isLoggedIn,(req,res)=>{
@@ -71,7 +68,7 @@ router.delete('/edit/:id', isLoggedIn, (req,res) =>{
   const iDx = req.params.id
   db.review.destroy({where: {id:iDx}})
   .then(deletedReview =>{
-    console.log('SUCCESS!!!!!!!!!!!!!!!!!!!!!!!!!')
+    console.log('!!! REVIEW DELETED !!!')
     res.redirect('/')})
   
 })
@@ -86,7 +83,7 @@ router.get('/edit/:id', isLoggedIn, (req,res) =>{
     include:[db.user]
   }).then (bookFound =>{
     console.log(bookFound)
-    res.render('reviews/editform.ejs', {bookFound, bookIdx:req.params.id})
+    res.render('reviews/editform.ejs', {bookFound})
   })
 })
 

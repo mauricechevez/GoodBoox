@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('../config/ppConfig');
+// const passport = require('../config/ppConfig');
 const db = require('../models')
 const isLoggedIn = require('../middleware/isLoggedIn')
 const methodOverride = require('method-override')
@@ -35,6 +35,7 @@ router.post('/new', isLoggedIn, (req,res) =>{
     userId: req.user.id
     })
     }).then(post =>{
+      req.flash('success','Review Created Successfully!')
       res.redirect('/')
     })
 })
@@ -69,6 +70,7 @@ router.delete('/edit/:id', isLoggedIn, (req,res) =>{
   db.review.destroy({where: {id:iDx}})
   .then(deletedReview =>{
     console.log('!!! REVIEW DELETED !!!')
+    req.flash('success','Review Deleted succesfully.')
     res.redirect('/')})
   
 })

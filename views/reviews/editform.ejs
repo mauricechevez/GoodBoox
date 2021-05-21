@@ -3,7 +3,9 @@
 <div class="container center-block">
 <p class="h4">Edit the <%= bookFound.title %>  book review</p>
 <!-- FORM FOR NEW BOOK -->
-Current book ID is <%= bookFound.id %> 
+You are currently editing the review of <span class="bold-600"><%= bookFound.title %> </span>with an ID of <span class="bold-600"><%= bookFound.id %> in the database</span>.
+<br \>
+<br \>
 <form action="/book/edit/<%= bookFound.id %>/?_method=PUT" method="POST">
 <label for="book-title">Book Title *</label>
 <input type="text" id="book-title" name="title" value="<%= bookFound.title %>" required>
@@ -21,7 +23,7 @@ Current book ID is <%= bookFound.id %>
 <label for="book-price">Retail Price *</label>
 <input type="number" id="book-price" name="book_price" placeholder="Enter Book Price" value="<%= bookFound.book_price %>" required>
 <label for="img-url">Image Address (full URL)</label>
-<input type="url" id="img-url" placeholder="Enter image URL" value="<%= bookFound.img_url %>" name="img_url">
+<input type="url" id="img-url" placeholder="Enter image URL" value="<%= bookFound.img_url %>" name="img_url" required>
 <br><br>
 <div class="rating">
     <p>Rating (1 = Horrible, 5 = Excellent)</p>

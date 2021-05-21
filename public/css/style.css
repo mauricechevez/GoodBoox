@@ -16,6 +16,14 @@ h1 {
   border: black 2px solid;
 }
 
+.bold-600{
+  font-weight: 600;
+}
+
+.bold-700{
+  font-weight: 700;
+}
+
 .nyt-content{
   border: black 2px solid;
   background: rgb(197, 197, 197);
@@ -24,4 +32,6 @@ h1 {
   display: flex;
   justify-content: space-between;
 }
+
+
 

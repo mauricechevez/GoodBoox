@@ -40,13 +40,16 @@ router.post('/new', isLoggedIn, (req,res) =>{
     })
 })
 
+
+
+
 // VIEW an individual review
 router.get('/review/:id', (req, res) =>{
     const bookId = req.params.id
     // const authorName
     db.review.findOne({
       where:{id:bookId},
-      include:[db.user]
+      include:[db.user,db.comment]
     }).then(bookFound =>{
       console.log(bookFound)
       res.render('reviews/index.ejs', {bookFound})
@@ -55,6 +58,19 @@ router.get('/review/:id', (req, res) =>{
       console.log('ERROR' , err)
     })
   })
+
+// Comments
+
+router.post('/review/:id', (req,res)=>{
+  db.comment.create({
+    name: req.body.name,
+    content:req.body.content
+  }).then(newPost =>{
+    console.log(newPost)
+    res.redirect("/")
+  })
+})
+
 
   // EDIT Page index to see all books and edit links.
 router.get('/edit', isLoggedIn, (req,res) =>{

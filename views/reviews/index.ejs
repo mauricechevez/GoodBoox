@@ -16,6 +16,17 @@
     <p>Reviewed by: <span style="font-weight: 700;"><%= bookFound.user.name %> </span></p>
 
 </div>
-<div class='container comment-section'>
+<div class='container comment-form' style="margin-bottom: 100px;">
     <p class="h5">Comments here</p> 
+
+    <form action="/book/review/:id/" method="POST">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name">
+    <label for="content">content</label>
+    <input type="text" id="content" name="content">
+    <input type="submit" value="submit">
+    </form>
 </div>
+<!-- <div class="container comment-section">
+    <%# bookFound.comment.content %> 
+</div> -->

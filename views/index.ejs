@@ -4,7 +4,7 @@
     <h3>Check out our latest book reviews</h3>
     <% reviews.forEach((review, index) => { %>
        
-        <li><a href="/book/review/<%=review.id%>"><%= review.title %></a> by <%= review.author %>.</li>
+        <li class="review-list"><a href="/book/review/<%=review.id%>"><%= review.title %></a> by <%= review.author %>.</li>
         
     <% }); %> 
 </div>
@@ -17,17 +17,20 @@
     <div class="nyt-box__container">
         <!--Container 1-->
         <div class="nyt-content__box">
-            <p class="nyt-book__author"><%= book1Object.title %> </p>
-            <p>by <%= book1Object.author %> </p>
+            <p class="nyt-book__title"><%= book1Object.title %> </p>
+            <p class="nyt-book__author">by <%= book1Object.author %> </p>
+            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= book1Object.primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
             <div class="nyt-content__box-content">
                 <img src="<%= book1Object.book_image %>" alt="<%= book1Object.title %>" class="nyt-book--image">
-               <p style="font-size: .9rem;"><%= book1Object.description %></p>  
+               <p style="font-size: .9rem;"><%= book1Object.description %></p>
+                
             </div>
         </div>          
         <!--Container 2--> 
         <div class="nyt-content__box">
-            <p class="nyt-book__author"><%= book2Object.title %> </p>
-            <p>by <%= book2Object.author %> </p>
+            <p class="nyt-book__title"><%= book2Object.title %> </p>
+            <p class="nyt-book__author">by <%= book2Object.author %> </p>
+            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= book2Object.primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
             <div class="nyt-content__box-content">
                 <img src="<%= book2Object.book_image %>" alt="<%= book2Object.title %>" class="nyt-book--image">
                <p style="font-size: .9rem;"><%= book2Object.description %></p>  
@@ -35,8 +38,9 @@
         </div>
         <!--Container 3--> 
         <div class="nyt-content__box">
-            <p class="nyt-book__author"><%= book3Object.title %> </p>
-            <p>by <%= book3Object.author %> </p>
+            <p class="nyt-book__title"><%= book3Object.title %> </p>
+            <p class="nyt-book__author">by <%= book3Object.author %> </p>
+            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= book3Object.primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
             <div class="nyt-content__box-content">
                 <img src="<%= book3Object.book_image %>" alt="<%= book3Object.title %>" class="nyt-book--image">
                <p style="font-size: .9rem;"><%= book3Object.description %></p>  
@@ -45,8 +49,9 @@
 
         <!--Container 4--> 
         <div class="nyt-content__box">
-            <p class="nyt-book__author"><%= book4Object.title %> </p>
-            <p>by <%= book4Object.author %> </p>
+            <p class="nyt-book__title"><%= book4Object.title %> </p>
+            <p class="nyt-book__author">by <%= book4Object.author %> </p>
+            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= book4Object.primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
             <div class="nyt-content__box-content">
                 <img src="<%= book4Object.book_image %>" alt="<%= book4Object.title %>" class="nyt-book--image">
                <p style="font-size: .9rem;"><%= book4Object.description %></p>  

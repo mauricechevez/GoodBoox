@@ -10,19 +10,47 @@
 </div>
 
 <div class="container nyt-content">
-    <h4>More book reviews from our partners</h4>
+    <div class="h4">The latest New York Times best sellers 
+        <p class="h6">For week of <%= bestSellersDate %> </p>
+    </div>
+    
     <div class="nyt-box__container">
+        <!--Container 1-->
         <div class="nyt-content__box">
-            <p>Story  API content</p>
+            <p class="nyt-book__author"><%= book1Object.title %> </p>
+            <p>by <%= book1Object.author %> </p>
+            <div class="nyt-content__box-content">
+                <img src="<%= book1Object.book_image %>" alt="<%= book1Object.title %>" class="nyt-book--image">
+               <p style="font-size: .9rem;"><%= book1Object.description %></p>  
+            </div>
+        </div>          
+        <!--Container 2--> 
+        <div class="nyt-content__box">
+            <p class="nyt-book__author"><%= book2Object.title %> </p>
+            <p>by <%= book2Object.author %> </p>
+            <div class="nyt-content__box-content">
+                <img src="<%= book2Object.book_image %>" alt="<%= book2Object.title %>" class="nyt-book--image">
+               <p style="font-size: .9rem;"><%= book2Object.description %></p>  
+            </div>
         </div>
+        <!--Container 3--> 
         <div class="nyt-content__box">
-            <p>Story  API content</p>
+            <p class="nyt-book__author"><%= book3Object.title %> </p>
+            <p>by <%= book3Object.author %> </p>
+            <div class="nyt-content__box-content">
+                <img src="<%= book3Object.book_image %>" alt="<%= book3Object.title %>" class="nyt-book--image">
+               <p style="font-size: .9rem;"><%= book3Object.description %></p>  
+            </div>
         </div>
+
+        <!--Container 4--> 
         <div class="nyt-content__box">
-            <p>Story  API content</p>
-        </div>
-        <div class="nyt-content__box">
-            <p>Story  API content</p>
+            <p class="nyt-book__author"><%= book4Object.title %> </p>
+            <p>by <%= book4Object.author %> </p>
+            <div class="nyt-content__box-content">
+                <img src="<%= book4Object.book_image %>" alt="<%= book4Object.title %>" class="nyt-book--image">
+               <p style="font-size: .9rem;"><%= book4Object.description %></p>  
+            </div>
         </div>
     </div>
 </div>

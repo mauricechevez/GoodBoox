@@ -55,14 +55,16 @@ p.comment-name{
 }
 
 .nyt-content{
-  border: #382110 2px solid;
+  border: #382110 1px solid;
   background: rgb(245, 245, 245);
-  padding: 10px 0px;
+  padding: 25px 30px!important;
 }
 .nyt-box__container{
   display: flex;
-  
   justify-content: space-between;
+}
+.nyt-content__box{
+  width: 300px;
 }
 
 .book-img{
@@ -73,6 +75,20 @@ p.comment-name{
 
 .review-page{
   margin-bottom:5px;
-  font-size: .8rem;
+  font-size: .7rem;
 }
 
+.nyt-book--image{
+  width:80px;
+  object-fit: cover;
+  padding-right: 10px;
+}
+
+.nyt-content__box-content{
+  position: relative;
+  display: flex;
+}
+.nyt-book__author{
+  font-weight: 500;
+  margin-bottom: -5px;
+}

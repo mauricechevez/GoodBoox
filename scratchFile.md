@@ -28,3 +28,15 @@ book_rating: {
     * **DONE**
   * use the PUT method to return that data back into the database.
      * **DONE**
+
+
+### Extra info for NYT Story
+```
+<div class="nyt-content__box">
+            <ul>
+            <li style="font-weight: 500;"><%= book1Title %> </li>
+            <li>by <%= book1Author %> </li>
+            <li style="font-size: .8rem;"><%= book1Description %> </li>
+            <li ><img src="<%= book1image %>" alt="<%= book1Title %>" class="nyt-book--image"></li>
+            </ul>
+```

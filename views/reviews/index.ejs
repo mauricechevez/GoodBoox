@@ -1,23 +1,32 @@
 
-<div class="container">
-    <h2><%= bookFound.title %> </h2>
-    <!--Author here-->
-    <p>by <span style="font-weight: 700;"><%= bookFound.author %> </span></p>
-    <!-- Rating here -->
-    <p>Rating: <span style="font-weight: 700;"><%= bookFound.book_rating %> / 5 </span></p>
-    <!--Price here-->
-    <p>Price: <span style="font-weight: 700;">$<%= bookFound.book_price %></span> USD </p>
-    <!-- Image here-->
-    <img src="<%= bookFound.img_url %>" alt="<%=bookFound.title%>">
-    <!-- content here-->
-    <div class="bookreview-content">
-        <%= bookFound.content %> 
+<div class="container container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h2><%= bookFound.title %> </h2>
+        <!--Author here-->
+        <p class="review-page">by <span style="font-weight: 700;"><%= bookFound.author %> </span></p>
+        <!-- Rating here -->
+        <p class="review-page">Rating: <span style="font-weight: 700;"><%= bookFound.book_rating %> / 5 </span></p>
+        <!--Price here-->
+        <p class="review-page">Price: <span style="font-weight: 700;">$<%= bookFound.book_price %></span> USD </p>
+        <!--Reviewer info-->
+        <p class="review-page">Reviewed by: <span style="font-weight: 700;"><%= bookFound.user.name %> </span></p>
+      </div>
     </div>
-    <p>Reviewed by: <span style="font-weight: 700;"><%= bookFound.user.name %> </span></p>
-
+    <div class="row">
+      <!-- Book Image -->
+      <div class="col-md-2">
+        <img src="<%= bookFound.img_url %>" class="book-img" alt="<%=bookFound.title%>">
+      </div>
+      <!-- Review Content -->
+      <div class="col-md-10 book-content">
+        <p><%= bookFound.content %></p>   
+      </div>
+    </div>
 </div>
+<br>
 <div class='container comment-form' style="margin-bottom: 25px;">
-    <p class="h5">Comments Below</p> 
+    <p class="h6">Comments Below</p> 
 
     <form action="/book/review/<%= bookFound.id %> /" method="POST">
     <label for="name">Your Name</label>

@@ -11,6 +11,8 @@ const { compareSync } = require('bcrypt');
 
 /* ---- Routes ---- */
 
+
+
 // NEW REVIEW (VIEW FORM)
 router.get('/new', isLoggedIn,(req,res)=>{
   const {id, name} = req.user.get()

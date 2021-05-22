@@ -1,3 +1,12 @@
+*{
+  font-family:'Newsreader', serif;
+  
+}
+
+body{
+  background-color:#F4F1EA !important;
+}
+
 nav ul li {
   text-decoration: none;
   display: inline-block;
@@ -12,8 +21,21 @@ h1 {
   color: rgb(0, 0, 0);
 }
 
+.goodboox-logo{
+  text-decoration: none;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+.goodboox-subtitle{
+  margin-bottom: 1rem;
+  font-weight: 400;
+  font-style: oblique;
+}
+
 .review{
-  border: black 2px solid;
+  /* border: black 2px solid; */
+  margin-bottom: 50px;
 }
 
 .bold-600{
@@ -33,13 +55,24 @@ p.comment-name{
 }
 
 .nyt-content{
-  border: black 2px solid;
-  background: rgb(197, 197, 197);
+  border: #382110 2px solid;
+  background: rgb(245, 245, 245);
+  padding: 10px 0px;
 }
 .nyt-box__container{
   display: flex;
+  
   justify-content: space-between;
 }
 
+.book-img{
+  
+  margin:5px 15px 5px 5px;
+  width: 185px;
+}
 
+.review-page{
+  margin-bottom:5px;
+  font-size: .8rem;
+}
 

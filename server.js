@@ -8,7 +8,11 @@ const SECRET_SESSION = process.env.SECRET_SESSION;
 const passport = require('./config/ppConfig')
 const isLoggedIn = require('./middleware/isLoggedIn')
 const db = require('./models')
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
+// const { default: axios } = require('axios');
+const axios = require('axios')
+const API_KEY = process.env.API_KEY
+
 
 app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
@@ -33,11 +37,16 @@ app.use((req, res, next) =>{
 
 /* ------ ROUTES ------ */
 
-app.get('/', (req, res) => {
-    db.review.findAll()
-    .then(reviews =>{
-      res.render('index', {reviews});
-    })
+app.get('/', async (req, res) => {
+    try {
+      const reviews = await db.review.findAll()
+      const response = await axios.get(`https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=${API_KEY}`)
+      const data = response.data
+      console.log(data)
+      res.render('index', {reviews})
+    } catch (err) {
+      console.log(err)
+    }
 });
 
 app.get('/profile', isLoggedIn, (req, res) => {

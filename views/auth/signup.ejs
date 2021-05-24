@@ -1,12 +1,20 @@
-<form action="/auth/signup" method="POST">
-  <label for="new-email">Email</label>
-  <input id="new-email" type="email" name="email">
 
-  <label for="new-name">Name</label>
-  <input id="new-name" type="text" name="name">
+<div class="container review">
+  <!-- Form -->
+  <div class="row">
+    <div class="h3">Create a <span style="font-weight: 200;">good</span>boox account to create book reviews, and more!</div>
+  <form action="/auth/signup" method="POST">
+    <label for="new-email">Email Address</label>
+    <input class="form-control mb-3 w-50" id="new-email" type="email" name="email">
+  
+    <label for="new-name">Your Full Name</label>
+    <input class="form-control mb-3 w-50" id="new-name" type="text" name="name">
+  
+    <label for="new-password">Password</label>
+    <input class="form-control mb-3 w-50"id="new-password" type="password" name="password">
+  
+    <input type="submit" value="Sign up" class="btn btn-warning">
+  </form>
+  </div>
+</div>
 
-  <label for="new-password">Password</label>
-  <input id="new-password" type="password" name="password">
-
-  <input type="submit" value="Sign up">
-</form>

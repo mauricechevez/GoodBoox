@@ -4,15 +4,16 @@
     <h3>Check out our latest book reviews</h3>
     <% reviews.forEach((review, index) => { %>
        
-        <li class="review-list"><a href="/book/review/<%=review.id%>"><%= review.title %></a> by <%= review.author %>.</li>
+        <li class="review-list"><a href="/book/review/<%=review.id%>" class="gb-links"><%= review.title %></a> by <%= review.author %>.</li>
         
     <% }); %> 
 </div>
 
 <div class="container nyt-content">
-    <div class="h4">The latest New York Times best sellers 
+    <div class="h4">The latest New York Times Hardcover Fiction Best Sellers 
         <p class="h6">For week of <%= bestSellersDate %> </p>
     </div>
+    <hr class="divider-line">
     
     <div class="nyt-box__container">
         <!--Container 1-->

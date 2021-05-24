@@ -3,6 +3,11 @@
   
 }
 
+:root{
+  --gb-brown:#382110;
+  --gb-light-brown:#8d532a;
+}
+
 body{
   background-color:#F4F1EA !important;
 }
@@ -17,6 +22,15 @@ li{
   list-style: none;
 }
 
+.gb-links{
+  color: var(--gb-brown);
+}
+
+.gb-links:hover{
+  color: var(--gb-light-brown);
+}
+
+
 .review-list{
   margin-bottom: 7px;
 }
@@ -30,23 +44,24 @@ h1 {
   
 }
 .goodboox-header li a{
-  color: #382110!important;
+  color: var(--gb-brown)!important;
+  
 }
 
 .goodboox-header li a:hover{
-  color: #8d532a!important;
+  color: var(--gb-light-brown)!important;
 }
 
 .goodboox-logo{
   text-decoration: none;
   margin-bottom: 0px;
   padding: 0px;
-  color: #382110;
+  color: var(--gb-brown);
   font-size:3.2rem;
   
 }
 .goodboox-logo:hover{
-  color:#8d532a ;
+  color:var(--gb-light-brown) ;
 }
 
 .goodboox-subtitle{
@@ -103,7 +118,12 @@ p.comment-name{
 
 .review-page{
   margin-bottom:5px;
-  font-size: .7rem;
+  font-size: .8rem;
+  
+}
+
+.edit-container{
+  display: flex;
 }
 
 .nyt-book--image{
@@ -130,4 +150,8 @@ p.comment-name{
 
 .nyt-book__isbn{
   font-size: .7rem;
+}
+
+.divider-line{
+  color: rgba(54, 54, 54, 0.5);
 }

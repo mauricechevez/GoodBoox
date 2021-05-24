@@ -10,7 +10,7 @@
         <!--Price here-->
         <p class="review-page">Price: <span style="font-weight: 700;">$<%= bookFound.book_price %></span> USD </p>
         <!--Reviewer info-->
-        <p class="review-page">Reviewed by: <span style="font-weight: 700;"><%= bookFound.user.name %> </span></p>
+        <p class="review-page">Reviewed by: <span style="font-weight: 700;"><%= bookFound.user.name %> </span> on <%= bookFound.createdAt %> </p>
       </div>
     </div>
     <div class="row">
@@ -24,7 +24,7 @@
       </div>
     </div>
     <br>
-    <hr class="solid">
+    <hr class="divider-line">
     <!-- Comment Form -->
     <div class='comment-form' style="margin-bottom: 25px; width: 600px;">
       <p class="h5">Leave a Reply</p> 
@@ -44,7 +44,10 @@
 </div>
 
 <div class="container comment-section review">
-  <p class="h4">All Comments</p>    
+  <p class="h4">All Comments</p>
+  <% if (bookFound.comments < 1) { %>
+   <p>No comments found. Read this book yet? Leave a comment!</p>
+  <% } %>    
   <% bookFound.comments.forEach(cmt => { %>
     <li><p class="comment-name"><%= cmt.name %> </p></li>
      <li><p><%= cmt.content %> </p></li>

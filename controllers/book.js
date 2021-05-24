@@ -63,7 +63,6 @@ router.post('/new', isLoggedIn, (req,res) =>{
 
 
 // POST Comments
-
 router.post('/review/:id', (req,res)=>{
   const currentReviewId = parseInt(req.params.id)
   db.review.findOne({where:{id:currentReviewId}})
@@ -77,7 +76,13 @@ router.post('/review/:id', (req,res)=>{
   .then(postedComment =>{
     console.log(postedComment)
     console.log(currentReviewId)
+    req.flash('success','Thank you for your comment!')
     res.redirect(`/book/review/${currentReviewId}`)
+  })
+  .catch(err =>{
+    console.log('###### COMMENT ERROR ######', err)
+    req.flash('error','There was an error processing your comment')
+    res.redirect('/')
   })
 })
 

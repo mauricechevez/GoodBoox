@@ -1,11 +1,9 @@
 <br \>
 
-<div class="container center-block">
-<p class="h4">Edit the <%= bookFound.title %>  book review</p>
+<div class="container center-block review">
+<p class="h4">Edit the "<%= bookFound.title %>""  book review</p>
 <!-- FORM FOR NEW BOOK -->
-You are currently editing the review of <span class="bold-600"><%= bookFound.title %> </span>with an ID of <span class="bold-600"><%= bookFound.id %> in the database</span>.
-<br \>
-<br \>
+
 <form action="/book/edit/<%= bookFound.id %>/?_method=PUT" method="POST">
 <label for="book-title">Book Title *</label>
 <input type="text" id="book-title" name="title" value="<%= bookFound.title %>" required>
@@ -27,20 +25,31 @@ You are currently editing the review of <span class="bold-600"><%= bookFound.tit
 <br><br>
 <div class="rating">
     <p>Rating (1 = Horrible, 5 = Excellent)</p>
-    <p style="font-weight: bold;">NOTE: current rating was <%= bookFound.book_rating %>. Please re-enter this rating or change it. </p>
-    <input type="radio" id="1" name="book_rating" value=1>
+    <!-- <p style="font-weight: bold;">NOTE: current rating was <%# bookFound.book_rating %>. Please re-enter this rating or change it. </p> -->
+   
+    <input type="radio" id="1" name="book_rating" <% if (bookFound.book_rating == 1) { %>
+        checked
+    <% } %> value=1 >
     <label for="1">1</label>
-    <input type="radio" id="2" name="book_rating" value=2>
+    <input type="radio" id="2" name="book_rating" <% if (bookFound.book_rating == 2) { %>
+        checked
+    <% } %> value=2>
     <label for="2">2</label>
-    <input type="radio" id="3" name="book_rating" value=3>
+    <input type="radio" id="3" name="book_rating" <% if (bookFound.book_rating == 3) { %>
+        checked
+    <% } %> value=3>
     <label for="3">3</label>
-    <input type="radio" id="4" name="book_rating" value=4>
+    <input type="radio" id="4" name="book_rating" <% if (bookFound.book_rating == 4) { %>
+        checked
+    <% } %> value=4>
     <label for="4">4</label>
-    <input type="radio" id="5" name="book_rating" value=5>
+    <input type="radio" id="5" name="book_rating" <% if (bookFound.book_rating == 5) { %>
+        checked
+    <% } %> value=5>
     <label for="5">5</label>
 </div>
 <br \>
-<input type="submit" value="Submit" class="btn btn-primary">
+<input type="submit" value="Submit" class="btn btn-warning">
 <br><br>
 <p>* required</p>
 </form>

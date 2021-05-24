@@ -48,6 +48,9 @@ Registered visitors can create their own reviews, and edit and delete any review
 | DELETE | /book/edit/:id | Delete (Delete) | Deletes a specific review based on the ID parameter.
 | ------- | ------- | ------- | ------- |
 
+# Entity Relationship Diagram
+![ERD](./img/screenshots/ERD_diagram1.png)
+
 # Screenshots of pages
 ### **Index Page - Reviews**
 ![Screenshot of Index - list of reviews](./img/screenshots/index-reviews1.png)

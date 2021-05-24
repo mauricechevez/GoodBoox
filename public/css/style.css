@@ -128,7 +128,7 @@ p.comment-name{
 
 .nyt-book--image{
   width:80px;
-  object-fit: cover;
+  object-fit: scale-down;
   padding-right: 10px;
 }
 
@@ -150,6 +150,11 @@ p.comment-name{
 
 .nyt-book__isbn{
   font-size: .7rem;
+}
+
+.nyt-book__rank{
+  font-size: .7rem;
+  margin-bottom: 0px;
 }
 
 .divider-line{

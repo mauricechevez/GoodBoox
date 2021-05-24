@@ -4,6 +4,7 @@
 <!-- FORM FOR NEW BOOK -->
 
 <form action="/book/new" method="POST">
+    <!-- Form Group 1-->
     <div class="form-group">
     <label for="book-title">Book Title *</label>
     <input type="text" class="form-control w-50 mb-3" id="book-title" name="title" placeholder="Enter a Book Title" required>
@@ -14,7 +15,9 @@
     <label for="content">Review *</label>
     <textarea name="content" class="form-control w-50 mb-3" id="content" cols="90" rows="10" placeholder="Enter your review" required></textarea>
     </div>
+    <!-- End of Form Group 1-->
 
+     <!-- Form Group 2-->
     <div class="form-group">
     <label for="book-price">Retail Price *</label>
     <input type="number" class="form-control w-25 mb-3" id="book-price" name="book_price" placeholder="Enter Book Price" required>
@@ -32,9 +35,9 @@
     <label for="4">4</label>
     <input type="radio" class="form-check-input" id="5" name="book_rating" value=5 required>
     <label for="5">5</label>
-</div>
-
     </div>
+    </div>
+    <!-- End of Form Group 2-->
 
 <br \>
 <input type="submit" value="Submit" class="btn btn-warning">

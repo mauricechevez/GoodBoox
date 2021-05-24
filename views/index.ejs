@@ -9,8 +9,9 @@
     <% }); %> 
 </div>
 
-<div class="container nyt-content">
-    <div class="h4">The latest New York Times Hardcover Fiction Best Sellers 
+<!-- Fiction Container -->
+<div class="container nyt-content mb-5">
+    <div class="h4">The latest New York Times Fiction Best Sellers 
         <p class="h6">For week of <%= bestSellersDate %> </p>
     </div>
     <hr class="divider-line">
@@ -20,6 +21,7 @@
         <div class="nyt-content__box">
             <p class="nyt-book__title"><%= book1Object.title %> </p>
             <p class="nyt-book__author">by <%= book1Object.author %> </p>
+            <p class="nyt-book__rank">Rank: <%= book1Object.rank %> </p>
             <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= book1Object.primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
             <div class="nyt-content__box-content">
                 <img src="<%= book1Object.book_image %>" alt="<%= book1Object.title %>" class="nyt-book--image">
@@ -31,6 +33,7 @@
         <div class="nyt-content__box">
             <p class="nyt-book__title"><%= book2Object.title %> </p>
             <p class="nyt-book__author">by <%= book2Object.author %> </p>
+            <p class="nyt-book__rank">Rank: <%= book2Object.rank %> </p>
             <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= book2Object.primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
             <div class="nyt-content__box-content">
                 <img src="<%= book2Object.book_image %>" alt="<%= book2Object.title %>" class="nyt-book--image">
@@ -41,6 +44,7 @@
         <div class="nyt-content__box">
             <p class="nyt-book__title"><%= book3Object.title %> </p>
             <p class="nyt-book__author">by <%= book3Object.author %> </p>
+            <p class="nyt-book__rank">Rank: <%= book3Object.rank %> </p>
             <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= book3Object.primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
             <div class="nyt-content__box-content">
                 <img src="<%= book3Object.book_image %>" alt="<%= book3Object.title %>" class="nyt-book--image">
@@ -52,6 +56,7 @@
         <div class="nyt-content__box">
             <p class="nyt-book__title"><%= book4Object.title %> </p>
             <p class="nyt-book__author">by <%= book4Object.author %> </p>
+            <p class="nyt-book__rank">Rank: <%= book4Object.rank %> </p>
             <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= book4Object.primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
             <div class="nyt-content__box-content">
                 <img src="<%= book4Object.book_image %>" alt="<%= book4Object.title %>" class="nyt-book--image">
@@ -59,4 +64,61 @@
             </div>
         </div>
     </div>
+</div>
+
+<!-- Non Fiction Container -->
+<div class="container nyt-content mb-5">
+    <div class="h4">The latest New York Times Non-Fiction Best Sellers 
+        <p class="h6">For week of <%= bestSellersDate %> </p>
+    </div>
+    <hr class="divider-line">
+    <div class="nyt-box__container">
+        <!--Container 1-->
+        <div class="nyt-content__box">
+            <p class="nyt-book__title"><%= nonfictionData[0].title %> </p>
+            <p class="nyt-book__author">by <%=  nonfictionData[0].author  %> </p>
+            <p class="nyt-book__rank">Rank: <%= nonfictionData[0].rank %> </p>
+            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%=  nonfictionData[0].primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
+            <div class="nyt-content__box-content">
+                <img src="<%=  nonfictionData[0].book_image %>" alt="<%= nonfictionData[0].title %>" class="nyt-book--image">
+               <p style="font-size: .9rem;"><%= nonfictionData[0].description %></p>
+            </div>
+        </div>
+     <!--Container 2-->
+     <div class="nyt-content__box">
+        <p class="nyt-book__title"><%= nonfictionData[1].title %> </p>
+        <p class="nyt-book__author">by <%=  nonfictionData[1].author  %> </p>
+        <p class="nyt-book__rank">Rank: <%= nonfictionData[1].rank %> </p>
+        <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%=  nonfictionData[1].primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
+        <div class="nyt-content__box-content">
+            <img src="<%=  nonfictionData[1].book_image %>" alt="<%= nonfictionData[1].title %>" class="nyt-book--image">
+           <p style="font-size: .9rem;"><%= nonfictionData[1].description %></p>
+        </div>
+     </div>
+     <!--Container 3-->
+     <div class="nyt-content__box">
+        <p class="nyt-book__title"><%= nonfictionData[2].title %> </p>
+        <p class="nyt-book__author">by <%=  nonfictionData[2].author  %> </p>
+        <p class="nyt-book__rank">Rank: <%= nonfictionData[2].rank %> </p>
+        <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%=  nonfictionData[2].primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
+        <div class="nyt-content__box-content">
+            <img src="<%=  nonfictionData[2].book_image %>" alt="<%= nonfictionData[2].title %>" class="nyt-book--image">
+           <p style="font-size: .9rem;"><%= nonfictionData[2].description %></p>
+        </div>
+     </div>
+      <!--Container 4-->
+      <div class="nyt-content__box">
+        <p class="nyt-book__title"><%= nonfictionData[3].title %> </p>
+        <p class="nyt-book__author">by <%=  nonfictionData[3].author  %> </p>
+        <p class="nyt-book__rank">Rank: <%= nonfictionData[3].rank %> </p>
+        <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%=  nonfictionData[3].primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
+        <div class="nyt-content__box-content">
+            <img src="<%=  nonfictionData[3].book_image %>" alt="<%= nonfictionData[3].title %>" class="nyt-book--image">
+           <p style="font-size: .9rem;"><%= nonfictionData[3].description %></p>
+        </div>
+     </div>
+
+   </div>
+
+    
 </div>

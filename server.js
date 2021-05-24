@@ -43,16 +43,10 @@ app.get('/', async (req, res) => {
       const response = await axios.get(`https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key=${API_KEY}`)
       const fictionData = response.data.results.lists[0].books // list of Fiction best sellers
       const nonfictionData = response.data.results.lists[1].books // Non fiction list best sellers
-      const pictureBookData = response.data.results.lists[8].books // Childrens Book list best sellers
-      const childrensSeriesData = response.data.results.lists[9].books
+      const pictureBookData = response.data.results.lists[8].books // Childrens Picture Book list best sellers
+      const childrensSeriesData = response.data.results.lists[9].books // Childrens Series list best sellers
       const bestSellersDate = response.data.results.bestsellers_date
-      /* const book1Object = data[0]
-      const book2Object = data[1]
-      const book3Object = data[2]
-      const book4Object = data[3] */
-      
-      
-      
+      // Render page
       res.render('index', {reviews,bestSellersDate,fictionData,nonfictionData,pictureBookData,childrensSeriesData})
     } catch (err) {
       console.log(err)

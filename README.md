@@ -15,18 +15,21 @@ This project was meant to demonstrate the use of full stack technlogies, includi
 * Javascript
 
 ## Usage
-**Without Account**
+* **Without Account**
 Visitors can view any review and comment on them without creating an account.
 
-**With Account**
+* **With Account**
 Registered visitors can create their own reviews, and edit and delete any review.
 
 ## Links Table
 | Page | Description |
 | ----------- | ----------- |
-| [goodbox main page](https://good-boox.herokuapp.com/) | Homepage with a list of reviews, and the latest NYT Best Sellers in multiple categories |
+| [goodboox main page](https://good-boox.herokuapp.com/) | Homepage with a list of reviews, and the latest NYT Best Sellers in multiple categories |
 | [Signup Page](https://good-boox.herokuapp.com/auth/signup) | Sign up for access to more features on the site |
 | [Login Page](https://good-boox.herokuapp.com/auth/login) | Login to access your own account |
+| [New Review](https://good-boox.herokuapp.com/book/new) | Create a new review (logged in) |
+| [Edit Review Page](https://good-boox.herokuapp.com/book/edit)| Main page for editing and deleting reviews (logged in) |
+| [Profile page](https://good-boox.herokuapp.com/profile) | Your profile page (logged in)  | 
 
 
 # Screenshots of pages
@@ -44,9 +47,106 @@ Registered visitors can create their own reviews, and edit and delete any review
 
 
 # How it works (Code)
-``` 
-// Write some code!
+## Initial Index page code
+When visitor arrives at the main page, Sequelize will find all reviews. After that is fulfilled, Axios calls the New York Times API to retrieve an Overview list. I separated 4 categories (which are their own object in the API) and pass on that data to the Index EJS page for rendering purposes.
+```javascript
+app.get('/', async (req, res) => {
+    try {
+      const reviews = await db.review.findAll()
+      const response = await axios.get(`https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key=${API_KEY}`)
+      const fictionData = response.data.results.lists[0].books // list of Fiction best sellers
+      const nonfictionData = response.data.results.lists[1].books // Non fiction list best sellers
+      const pictureBookData = response.data.results.lists[8].books // Childrens Picture Book list best sellers
+      const childrensSeriesData = response.data.results.lists[9].books // Childrens Series list best sellers
+      const bestSellersDate = response.data.results.bestsellers_date
+      // Render page
+      res.render('index', {reviews,bestSellersDate,fictionData,nonfictionData,pictureBookData,childrensSeriesData})
+    } catch (err) {
+      console.log(err)
+    }
+});
 ```
+
+## Edit Review page
+The page to edit a review involves finding a review based on the parameter id passed into the URL. On the related EJS page, each input field is then repopulated with the book's data from the review.
+
+### **Edit review route**
+```javascript
+router.get('/edit/:id', isLoggedIn, (req,res) =>{
+  const bookId = req.params.id
+  db.review.findOne({
+    where: {id:bookId},
+    include:[db.user]
+  }).then (bookFound =>{
+    console.log(bookFound)
+    res.render('reviews/editform.ejs', {bookFound})
+  })
+})
+```
+
+### **Edit review EJS page**
+```HTML
+<div class="container center-block review">
+<p class="h4">Edit the "<%= bookFound.title %>""  book review</p>
+
+<form action="/book/edit/<%= bookFound.id %>/?_method=PUT" method="POST">
+    <div class="form-group">
+        <label for="book-title">Book Title *</label>
+        <input type="text" class="form-control w-50 mb-3"  id="book-title" name="title" value="<%= bookFound.title %>" required>
+        <label for="author">Author of Book *</label>
+        <input type="text" class="form-control w-50 mb-3"  id="author" name="author" placeholder="Enter Author Name" value="<%= bookFound.author %>" required>
+        <label for="category">Category *</label>
+        <input type="text" class="form-control w-50 mb-3"  id="category" name="category" placeholder="Enter a Category" value="<%= bookFound.category %>" required><input>
+        <label for="content">Review *</label>
+        <textarea name="content" class="form-control w-50 mb-3"  id="content" cols="90" rows="10" placeholder="Enter your review" required><%= bookFound.content %> </textarea>
+    </div>
+    <div class="form-group">
+        <label for="book-price">Retail Price *</label>
+        <input type="number" class="form-control w-25 mb-3"  id="book-price" name="book_price" placeholder="Enter Book Price" value="<%= bookFound.book_price %>" required>
+        <label for="img-url">Image Address (full URL)</label>
+        <input type="url" class="form-control w-50 mb-3"  id="img-url" placeholder="Enter image URL" value="<%= bookFound.img_url %>" name="img_url" required>
+        <br><br>
+        <div class="rating">
+            <p>Rating (1 = Horrible, 5 = Excellent)</p>
+            <input type="radio" class="form-check-input"  id="1" name="book_rating" <% if (bookFound.book_rating == 1) { %>
+                checked
+            <% } %> value=1 required >
+            <label for="1">1</label>
+            <input type="radio" class="form-check-input"  id="2" name="book_rating" <% if (bookFound.book_rating == 2) { %>
+                checked
+            <% } %> value=2 required>
+            <label for="2">2</label>
+            <input type="radio" class="form-check-input"  id="3" name="book_rating" <% if (bookFound.book_rating == 3) { %>
+                checked
+            <% } %> value=3 required>
+            <label for="3">3</label>
+            <input type="radio" class="form-check-input"  id="4" name="book_rating" <% if (bookFound.book_rating == 4) { %>
+                checked
+            <% } %> value=4 required>
+            <label for="4">4</label>
+            <input type="radio" class="form-check-input"  id="5" name="book_rating" <% if (bookFound.book_rating == 5) { %>
+                checked
+            <% } %> value=5 required>
+            <label for="5">5</label>
+        </div>
+    </div>
+<br \>
+<input type="submit" value="Submit" class="btn btn-warning">
+<br><br>
+<p>* required</p>
+</form>
+</div>
+
+```
+
+
+---
+# Installation
+Write something here
+
+---
+
+
 
 # Future Considerations
 The site sort of a "wild wild west" right now, which with time, can become chaotic. Here are a couple of challenges I'd like to fix:

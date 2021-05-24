@@ -2,6 +2,7 @@
 <!-- List of reviews below -->
 <div class="container review">
     <h3>Check out our latest book reviews</h3>
+    <hr class="divider-line">
     <% reviews.forEach((review, index) => { %>
        
         <li class="review-list"><a href="/book/review/<%=review.id%>" class="gb-links"><%= review.title %></a> by <%= review.author %>.</li>

@@ -41,18 +41,19 @@ app.get('/', async (req, res) => {
     try {
       const reviews = await db.review.findAll()
       const response = await axios.get(`https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key=${API_KEY}`)
-      const data = response.data.results.lists[0].books // list of Fiction best sellers
+      const fictionData = response.data.results.lists[0].books // list of Fiction best sellers
       const nonfictionData = response.data.results.lists[1].books // Non fiction list best sellers
-      const childrensBookData = response.data.results.lists[8].books // Childrens Book list best sellers
+      const pictureBookData = response.data.results.lists[8].books // Childrens Book list best sellers
+      const childrensSeriesData = response.data.results.lists[9].books
       const bestSellersDate = response.data.results.bestsellers_date
-      const book1Object = data[0]
+      /* const book1Object = data[0]
       const book2Object = data[1]
       const book3Object = data[2]
-      const book4Object = data[3]
+      const book4Object = data[3] */
       
       
       
-      res.render('index', {reviews,book1Object,book2Object,book3Object,book4Object,bestSellersDate,nonfictionData,childrensBookData})
+      res.render('index', {reviews,bestSellersDate,fictionData,nonfictionData,pictureBookData,childrensSeriesData})
     } catch (err) {
       console.log(err)
     }

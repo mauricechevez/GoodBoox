@@ -19,48 +19,48 @@
     <div class="nyt-box__container">
         <!--Container 1-->
         <div class="nyt-content__box">
-            <p class="nyt-book__title"><%= book1Object.title %> </p>
-            <p class="nyt-book__author">by <%= book1Object.author %> </p>
-            <p class="nyt-book__rank">Rank: <%= book1Object.rank %> </p>
-            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= book1Object.primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
+            <p class="nyt-book__title"><%= fictionData[0].title %> </p>
+            <p class="nyt-book__author">by <%= fictionData[0].author %> </p>
+            <p class="nyt-book__rank">Rank: <%= fictionData[0].rank %> </p>
+            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= fictionData[0].primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
             <div class="nyt-content__box-content">
-                <img src="<%= book1Object.book_image %>" alt="<%= book1Object.title %>" class="nyt-book--image">
-               <p style="font-size: .9rem;"><%= book1Object.description %></p>
+                <img src="<%= fictionData[0].book_image %>" alt="<%= fictionData[0].title %>" class="nyt-book--image">
+               <p style="font-size: .9rem;"><%= fictionData[0].description %></p>
                 
             </div>
         </div>          
         <!--Container 2--> 
         <div class="nyt-content__box">
-            <p class="nyt-book__title"><%= book2Object.title %> </p>
-            <p class="nyt-book__author">by <%= book2Object.author %> </p>
-            <p class="nyt-book__rank">Rank: <%= book2Object.rank %> </p>
-            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= book2Object.primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
+            <p class="nyt-book__title"><%= fictionData[1].title %> </p>
+            <p class="nyt-book__author">by <%= fictionData[1].author %> </p>
+            <p class="nyt-book__rank">Rank: <%= fictionData[1].rank %> </p>
+            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= fictionData[1].primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
             <div class="nyt-content__box-content">
-                <img src="<%= book2Object.book_image %>" alt="<%= book2Object.title %>" class="nyt-book--image">
-               <p style="font-size: .9rem;"><%= book2Object.description %></p>  
+                <img src="<%= fictionData[1].book_image %>" alt="<%= fictionData[1].title %>" class="nyt-book--image">
+               <p style="font-size: .9rem;"><%= fictionData[1].description %></p>  
             </div>
         </div>
         <!--Container 3--> 
         <div class="nyt-content__box">
-            <p class="nyt-book__title"><%= book3Object.title %> </p>
-            <p class="nyt-book__author">by <%= book3Object.author %> </p>
-            <p class="nyt-book__rank">Rank: <%= book3Object.rank %> </p>
-            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= book3Object.primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
+            <p class="nyt-book__title"><%= fictionData[2].title %> </p>
+            <p class="nyt-book__author">by <%= fictionData[2].author %> </p>
+            <p class="nyt-book__rank">Rank: <%= fictionData[2].rank %> </p>
+            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= fictionData[2].primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
             <div class="nyt-content__box-content">
-                <img src="<%= book3Object.book_image %>" alt="<%= book3Object.title %>" class="nyt-book--image">
-               <p style="font-size: .9rem;"><%= book3Object.description %></p>  
+                <img src="<%= fictionData[2].book_image %>" alt="<%= fictionData[2].title %>" class="nyt-book--image">
+               <p style="font-size: .9rem;"><%= fictionData[2].description %></p>  
             </div>
         </div>
 
         <!--Container 4--> 
         <div class="nyt-content__box">
-            <p class="nyt-book__title"><%= book4Object.title %> </p>
-            <p class="nyt-book__author">by <%= book4Object.author %> </p>
-            <p class="nyt-book__rank">Rank: <%= book4Object.rank %> </p>
-            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= book4Object.primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
+            <p class="nyt-book__title"><%= fictionData[3].title %> </p>
+            <p class="nyt-book__author">by <%= fictionData[3].author %> </p>
+            <p class="nyt-book__rank">Rank: <%= fictionData[3].rank %> </p>
+            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= fictionData[3].primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
             <div class="nyt-content__box-content">
-                <img src="<%= book4Object.book_image %>" alt="<%= book4Object.title %>" class="nyt-book--image">
-               <p style="font-size: .9rem;"><%= book4Object.description %></p>  
+                <img src="<%= fictionData[3].book_image %>" alt="<%= fictionData[3].title %>" class="nyt-book--image">
+               <p style="font-size: .9rem;"><%= fictionData[3].description %></p>  
             </div>
         </div>
     </div>
@@ -123,7 +123,63 @@
     
 </div>
 
-<!-- Childrens Book Container-->
+<!-- Childrens Picture Book Container-->
+<div class="container nyt-content mb-5">
+    <div class="h4">The latest New York Times Children's Series Best Sellers 
+        <p class="h6">For week of <%= bestSellersDate %> </p>
+    </div>
+    <hr class="divider-line">
+    <div class="nyt-box__container">
+         <!--Container 1-->
+         <div class="nyt-content__box">
+            <p class="nyt-book__title"><%= childrensSeriesData[0].title %> </p>
+            <p class="nyt-book__author">by <%= childrensSeriesData[0].author %> </p>
+            <p class="nyt-book__rank">Rank: <%= childrensSeriesData[0].rank %> </p>
+            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= childrensSeriesData[0].primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
+            <div class="nyt-content__box-content">
+                <img src="<%= childrensSeriesData[0].book_image %>" alt="<%= childrensSeriesData[0].title %>" class="nyt-book--image">
+               <p style="font-size: .9rem;"><%= childrensSeriesData[0].description %></p>  
+            </div>
+        </div>
+        <!--Container 2-->
+        <div class="nyt-content__box">
+            <p class="nyt-book__title"><%= childrensSeriesData[1].title %> </p>
+            <p class="nyt-book__author">by <%= childrensSeriesData[1].author %> </p>
+            <p class="nyt-book__rank">Rank: <%= childrensSeriesData[1].rank %> </p>
+            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= childrensSeriesData[1].primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
+            <div class="nyt-content__box-content">
+                <img src="<%= childrensSeriesData[1].book_image %>" alt="<%= childrensSeriesData[1].title %>" class="nyt-book--image">
+               <p style="font-size: .9rem;"><%= childrensSeriesData[1].description %></p>  
+            </div>
+        </div>
+        <!--Container 3-->
+        <div class="nyt-content__box">
+            <p class="nyt-book__title"><%= childrensSeriesData[2].title %> </p>
+            <p class="nyt-book__author">by <%= childrensSeriesData[2].author %> </p>
+            <p class="nyt-book__rank">Rank: <%= childrensSeriesData[2].rank %> </p>
+            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= childrensSeriesData[2].primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
+            <div class="nyt-content__box-content">
+                <img src="<%= childrensSeriesData[2].book_image %>" alt="<%= childrensSeriesData[2].title %>" class="nyt-book--image">
+               <p style="font-size: .9rem;"><%= childrensSeriesData[2].description %></p>  
+            </div>
+        </div>
+        <!--Container 4-->
+        <div class="nyt-content__box">
+            <p class="nyt-book__title"><%= childrensSeriesData[3].title %> </p>
+            <p class="nyt-book__author">by <%= childrensSeriesData[3].author %> </p>
+            <p class="nyt-book__rank">Rank: <%= childrensSeriesData[3].rank %> </p>
+            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= childrensSeriesData[3].primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
+            <div class="nyt-content__box-content">
+                <img src="<%= childrensSeriesData[3].book_image %>" alt="<%= childrensSeriesData[3].title %>" class="nyt-book--image">
+               <p style="font-size: .9rem;"><%= childrensSeriesData[3].description %></p>  
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- Childrens Picture Book Container-->
 <div class="container nyt-content mb-5">
     <div class="h4">The latest New York Times Children's Picture Book Best Sellers 
         <p class="h6">For week of <%= bestSellersDate %> </p>
@@ -132,46 +188,46 @@
     <div class="nyt-box__container">
         <!--Container 1-->
         <div class="nyt-content__box">
-            <p class="nyt-book__title"><%= childrensBookData[0].title %> </p>
-            <p class="nyt-book__author">by <%= childrensBookData[0].author %> </p>
-            <p class="nyt-book__rank">Rank: <%= childrensBookData[0].rank %> </p>
-            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= childrensBookData[0].primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
+            <p class="nyt-book__title"><%= pictureBookData[0].title %> </p>
+            <p class="nyt-book__author">by <%= pictureBookData[0].author %> </p>
+            <p class="nyt-book__rank">Rank: <%= pictureBookData[0].rank %> </p>
+            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= pictureBookData[0].primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
             <div class="nyt-content__box-content">
-                <img src="<%= childrensBookData[0].book_image %>" alt="<%= childrensBookData[0].title %>" class="nyt-book--image">
-               <p style="font-size: .9rem;"><%= childrensBookData[0].description %></p>  
+                <img src="<%= pictureBookData[0].book_image %>" alt="<%= pictureBookData[0].title %>" class="nyt-book--image">
+               <p style="font-size: .9rem;"><%= pictureBookData[0].description %></p>  
             </div>
         </div>       
         <!--Container 2-->
         <div class="nyt-content__box">
-            <p class="nyt-book__title"><%= childrensBookData[1].title %> </p>
-            <p class="nyt-book__author">by <%= childrensBookData[1].author %> </p>
-            <p class="nyt-book__rank">Rank: <%= childrensBookData[1].rank %> </p>
-            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= childrensBookData[1].primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
+            <p class="nyt-book__title"><%= pictureBookData[1].title %> </p>
+            <p class="nyt-book__author">by <%= pictureBookData[1].author %> </p>
+            <p class="nyt-book__rank">Rank: <%= pictureBookData[1].rank %> </p>
+            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= pictureBookData[1].primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
             <div class="nyt-content__box-content">
-                <img src="<%= childrensBookData[1].book_image %>" alt="<%= childrensBookData[1].title %>" class="nyt-book--image">
-               <p style="font-size: .9rem;"><%= childrensBookData[1].description %></p>  
+                <img src="<%= pictureBookData[1].book_image %>" alt="<%= pictureBookData[1].title %>" class="nyt-book--image">
+               <p style="font-size: .9rem;"><%= pictureBookData[1].description %></p>  
             </div>
         </div>
         <!--Container 3-->
         <div class="nyt-content__box">
-            <p class="nyt-book__title"><%= childrensBookData[2].title %> </p>
-            <p class="nyt-book__author">by <%= childrensBookData[2].author %> </p>
-            <p class="nyt-book__rank">Rank: <%= childrensBookData[2].rank %> </p>
-            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= childrensBookData[2].primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
+            <p class="nyt-book__title"><%= pictureBookData[2].title %> </p>
+            <p class="nyt-book__author">by <%= pictureBookData[2].author %> </p>
+            <p class="nyt-book__rank">Rank: <%= pictureBookData[2].rank %> </p>
+            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= pictureBookData[2].primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
             <div class="nyt-content__box-content">
-                <img src="<%= childrensBookData[2].book_image %>" alt="<%= childrensBookData[2].title %>" class="nyt-book--image">
-               <p style="font-size: .9rem;"><%= childrensBookData[2].description %></p>  
+                <img src="<%= pictureBookData[2].book_image %>" alt="<%= pictureBookData[2].title %>" class="nyt-book--image">
+               <p style="font-size: .9rem;"><%= pictureBookData[2].description %></p>  
             </div>
         </div> 
         <!--Container 4-->
         <div class="nyt-content__box">
-            <p class="nyt-book__title"><%= childrensBookData[3].title %> </p>
-            <p class="nyt-book__author">by <%= childrensBookData[3].author %> </p>
-            <p class="nyt-book__rank">Rank: <%= childrensBookData[3].rank %> </p>
-            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= childrensBookData[3].primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
+            <p class="nyt-book__title"><%= pictureBookData[3].title %> </p>
+            <p class="nyt-book__author">by <%= pictureBookData[3].author %> </p>
+            <p class="nyt-book__rank">Rank: <%= pictureBookData[3].rank %> </p>
+            <p class="nyt-book__isbn"><a href="https://www.google.com/search?tbo=p&tbm=bks&q=isbn:<%= pictureBookData[3].primary_isbn10 %>&num=10" target="_blank">Google ISBN Search</a></p> 
             <div class="nyt-content__box-content">
-                <img src="<%= childrensBookData[3].book_image %>" alt="<%= childrensBookData[3].title %>" class="nyt-book--image">
-               <p style="font-size: .9rem;"><%= childrensBookData[3].description %></p>  
+                <img src="<%= pictureBookData[3].book_image %>" alt="<%= pictureBookData[3].title %>" class="nyt-book--image">
+               <p style="font-size: .9rem;"><%= pictureBookData[3].description %></p>  
             </div>
         </div>       
       

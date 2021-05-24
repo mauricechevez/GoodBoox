@@ -257,6 +257,8 @@ router.get('/edit/:id', isLoggedIn, (req,res) =>{
 
 ```
 
+# Models
+Write models table here
 
 ---
 # Installation Requirements
@@ -279,6 +281,14 @@ The site sort of a "wild wild west" right now, which with time, can become chaot
     * I already have the categories in the database. Displaying them in a meaninful way is what I need to do.
 5. Associating a book review with multiple categories
     * A book can belong to many categories/genres. For simplicities sake, I left it at 1 category for now.
+6. Add a profile picture for each user
+    * I'd like to use Cloudinary to enable this functionality in the future.
+7. Search Functionality
+    * Be able to search by criteria like Author, Category, User Name, etc
+8. Differentiating account types, such as reviewer vs admin
+    * This would help prevent just allowing anyone to edit and delete any review.
+9. Deleting comments easily by adding a button next to the comment
+    * I have a dbTest function that does this currently.
 
 # Credits
 ## Helpful Links

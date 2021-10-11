@@ -2,7 +2,7 @@
 GoodBoox is a multi author Book Review site/blog, inspired by [Goodreads](https://www.goodreads.com/).
 
 # Project Purpose
-This project was meant to demonstrate the use of full stack technlogies, including:
+This project was meant to demonstrate the use of full stack technologies, including:
 * Node
 * Express JS
 * Postgres (For database)
